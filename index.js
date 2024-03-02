@@ -50,7 +50,7 @@ const generateSVG = (answers) => {
         <text x="10" y="20" font-family="monospace" font-size="30" fill="${answers.textColor}">${answers.companyName}</text>
     </svg >`;
 
-    fs.writeFile('logo.svg', svgLogo, (err) => {
+    fs.writeFileSync('logo.svg', svgLogo, (err) => {
         if (err) throw err;
         console.log('The file has been saved!');
     });
