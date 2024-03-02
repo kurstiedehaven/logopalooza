@@ -18,7 +18,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'textColor',
-            message: 'What color would you like to use?'
+            message: 'What text color would you like to use?'
         },
         {
             type: 'input',
@@ -44,11 +44,11 @@ const generateSVG = (answers) => {
     }
     shape.setColor(answers.shapeColor);
 
-    const svgLogo = `
-    <svg height="200" width="300" xmlns="http://www.w3.org/2000/svg">
+    const svgLogo =`
+        <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
         ${shape.render()}
-        <text x="100" y="50" font-family="monospace" font-size="30" fill="${answers.textColor}" text-anchor="middle">${answers.companyName}</text>
-    </svg >`;
+        <text x="150" y="90" font-family="monospace" font-size="40" fill="${answers.textColor}" text-anchor="middle" dy=".3em" >${answers.companyName}</text>
+        </svg >`;
 
     fs.writeFileSync('logo.svg', svgLogo, (err) => {
         if (err) throw err;
