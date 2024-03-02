@@ -45,7 +45,7 @@ const generateSVG = (answers) => {
     shape.setColor(answers.shapeColor);
 
     const svgLogo = `
-    <svg height="200" width="300" xmlns="http://www.w3.org/2000/svg>
+    <svg height="200" width="300" xmlns="http://www.w3.org/2000/svg">
         ${shape.render()}
         <text x="100" y="50" font-family="monospace" font-size="30" fill="${answers.textColor}" text-anchor="middle">${answers.companyName}</text>
     </svg >`;
